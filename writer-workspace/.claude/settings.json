@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "deny": ["Bash", "Read", "Edit", "Write", "Glob", "Grep", "NotebookEdit", "WebFetch", "WebSearch", "Agent", "Task", "Skill", "mcp__*"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [{ "type": "command", "command": "echo 'Nastroje su v tomto projekte zakazane.' >&2; exit 2" }]
+      }
+    ]
+  },
+  "enabledPlugins": { "openviking-memory@openviking": false }
+}
